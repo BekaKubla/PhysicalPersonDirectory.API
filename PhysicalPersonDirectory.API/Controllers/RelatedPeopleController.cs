@@ -9,21 +9,13 @@ namespace PhysicalPersonDirectory.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RelatedPeopleController
+    public class RelatedPeopleController : BaseController
     {
-        public readonly IMapper _mapper;
-        public IMediator _mediator;
-
         /// <summary>
         /// Related Person Controller
         /// </summary>
-        public RelatedPeopleController(
-            IMapper mapper,
-            IMediator mediator
-            )
+        public RelatedPeopleController(IMapper mapper, IMediator mediator) : base(mapper, mediator)
         {
-            _mapper = mapper;
-            _mediator = mediator;
         }
 
         /// <summary>
